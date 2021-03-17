@@ -1,0 +1,21 @@
+.social-media {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media li {
+    padding: 5px;
+    margin: 0;
+}
+
+.fab {
+    font-size: 35pt;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.6s background-color;
+}
+
+.fab:hover {
+    background-color: #151515;
+}

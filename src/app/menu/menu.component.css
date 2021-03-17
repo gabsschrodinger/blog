@@ -1,0 +1,12 @@
+.menu-img {
+    height: 50px;
+    width: 50px;
+}
+
+.fs-16 {
+    font-size: 16pt;
+}
+
+a {
+    cursor: pointer;
+}
