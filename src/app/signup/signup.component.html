@@ -11,32 +11,32 @@
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Insert your name">
+                        <input [(ngModel)]='user.name' type="text" class="form-control" name="name" id="name" placeholder="Insert your name">
                     </div>
 
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Insert your username">
+                        <input [(ngModel)]='user.username' type="text" class="form-control" name="username" id="username" placeholder="Insert your username">
                     </div>
 
                     <div class="form-group">
                         <label for="profile-picture">Profile picture URL</label>
-                        <input type="text" class="form-control" name="profile-picture" id="profile-picture" placeholder="Insert your profile picture URL">
+                        <input [(ngModel)]='user.picture' type="text" class="form-control" name="profile-picture" id="profile-picture" placeholder="Insert your profile picture URL">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Insert your password">
+                        <input (input)='confirmPassword($event)' type="password" class="form-control" name="password" id="password" placeholder="Insert your password">
                     </div>
 
                     <div class="form-group">
                         <label for="confirmPassword">Confirm password</label>
-                        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password">
+                        <input [(ngModel)]='user.password' type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password">
                     </div>
 
                     <div class="form-group">
                         <label for="userType">User type</label>
-                        <select name="userType" id="userType" class="form-control">
+                        <select (change)='typeUser($event)' name="userType" id="userType" class="form-control">
                             <option>Select a user type:</option>
                             <option value="userOnly">User only</option>
                             <option value="Admin">Admin user</option>
@@ -45,7 +45,7 @@
 
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-danger mr-4" routerLink='/login'>Cancel</button>
-                        <button type="submit" class="btn btn-success">Sign Up</button>
+                        <button type="submit" class="btn btn-success" (click)='register()'>Sign Up</button>
                     </div>
                 </div>
 
