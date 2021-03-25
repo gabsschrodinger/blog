@@ -46,8 +46,8 @@
                     <th>{{i.id}}</th>
                     <td>{{i.description}}</td>
                     <td class="d-flex justify-content-end">
-                      <button class="btn btn-info mr-3">Edit</button>
-                      <button class="btn btn-danger">Delete</button>
+                      <button class="btn btn-info mr-3" [routerLink]="['/subject-edit', i.id]" >Edit</button>
+                      <button class="btn btn-danger" [routerLink]="['/subject-delete', i.id]">Delete</button>
                     </td>
                   </tr>
                 </tbody>

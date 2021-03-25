@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SubjectComponent } from './subject/subject.component';
+import { SubjectEditComponent } from './edit/subject-edit/subject-edit.component';
+import { SubjectDeleteComponent } from './delete/subject-delete/subject-delete.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SubjectComponent } from './subject/subject.component';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    SubjectComponent
+    SubjectComponent,
+    SubjectEditComponent,
+    SubjectDeleteComponent
   ],
   imports: [
     BrowserModule,
