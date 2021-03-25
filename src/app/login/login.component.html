@@ -5,16 +5,19 @@
                 <div class="col-md-6">
                     <h1 class="text-center mb-3">Login</h1>
 
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input [(ngModel)]='userLogin.username' type="text" class="form-control" name="username" id="username" placeholder="Insert your username">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input [(ngModel)]='userLogin.password' type="password" class="form-control" name="password" id="password" placeholder="Insert your password">
+                    <div class="form-control-mine">
+                        <input [(ngModel)]='userLogin.username' class="" required type="text" name="username" id="username">
+                        <label class="p-1 bg-white ml-2">Username</label>
+                        <div class="border-around"></div>
                     </div>
 
-                    <div class="d-flex justify-content-center">
+                    <div class="form-control-mine mt-4">
+                        <input [(ngModel)]='userLogin.password' required type="password" class="form-control" name="password" id="password" placeholder="">
+                        <label class="p-1 bg-white ml-2" for="password">Password</label>
+                        <div class="border-around"></div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-4">
                         <button class="btn btn-success" type="submit" (click)='login()'>
                             Login
                         </button>
