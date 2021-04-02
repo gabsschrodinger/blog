@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -20,6 +20,10 @@ export class AuthService {
 
   signup(user: User): Observable<User> {
     return this.http.post<User>('http://localhost:8080/users/signup', user);
+  }
+
+  getByIdUser(id: number): Observable<User> {
+    return this.http.get<User>(`http://localhost:8080/users/${id}`);
   }
 
   logged() {

@@ -14,6 +14,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SubjectComponent } from './subject/subject.component';
 import { SubjectEditComponent } from './edit/subject-edit/subject-edit.component';
 import { SubjectDeleteComponent } from './delete/subject-delete/subject-delete.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
+import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SubjectDeleteComponent } from './delete/subject-delete/subject-delete.c
     HomeComponent,
     SubjectComponent,
     SubjectEditComponent,
-    SubjectDeleteComponent
+    SubjectDeleteComponent,
+    PostEditComponent,
+    PostDeleteComponent
   ],
   imports: [
     BrowserModule,
