@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
+
     console.log(environment.id);
 
     if(environment.token == '') {
