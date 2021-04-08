@@ -17,6 +17,8 @@ import { SubjectDeleteComponent } from './delete/subject-delete/subject-delete.c
 import { PostEditComponent } from './edit/post-edit/post-edit.component';
 import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,15 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     SubjectDeleteComponent,
     PostEditComponent,
     PostDeleteComponent,
-    UserEditComponent
+    UserEditComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [
     {

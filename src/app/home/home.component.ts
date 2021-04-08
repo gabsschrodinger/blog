@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Post } from '../model/post';
 import { Subject } from '../model/subject';
 import { User } from '../model/user';
+import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
 import { PostService } from '../service/post.service';
 import { SubjectService } from '../service/subject.service';
@@ -28,7 +29,8 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private postService: PostService,
     private subjectService: SubjectService,
-    private auth: AuthService
+    private auth: AuthService,
+    private alertService: AlertsService
   ) { }
 
   ngOnInit() {
@@ -72,7 +74,7 @@ export class HomeComponent implements OnInit {
 
     this.postService.postPost(this.post).subscribe((resp: Post) => {
       this.post = resp;
-      alert('Published!');
+      this.alertService.showAlertSuccess('Published!');
       this.post = new Post();
       this.seeAllPosts();
     })
