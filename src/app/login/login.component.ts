@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       environment.name = this.userLogin.name;
       environment.picture = this.userLogin.picture;
       environment.id = this.userLogin.id;
+      environment.type = this.userLogin.type;
 
       console.log(environment.token);
       console.log(environment.name);

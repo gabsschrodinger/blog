@@ -35,4 +35,8 @@ export class AuthService {
     
     return ok;
   }
+
+  adminUser() {
+    environment.type == 'Admin' ? true : false;
+  }
 }

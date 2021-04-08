@@ -39,7 +39,7 @@
                 <div class="border-around"></div>
             </div>
 
-            <div class="form-group mt-4">
+            <div *ngIf='auth.adminUser()' class="form-group mt-4">
                 <label for="userType">User type</label>
                 <select (change)='typeUser($event)' name="userType" id="userType" class="form-control">
                     <option>Select a user type:</option>
@@ -48,7 +48,7 @@
                 </select>
             </div>
 
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mt-5">
                 <button type="submit" class="btn btn-danger mr-4" routerLink='/home'>Cancel</button>
                 <button type="submit" class="btn btn-success" (click)='updateUser()'>Update User</button>
             </div>

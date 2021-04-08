@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Subject } from '../model/subject';
+import { AlertsService } from '../service/alerts.service';
 import { SubjectService } from '../service/subject.service';
 
 @Component({
@@ -16,13 +17,19 @@ export class SubjectComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private subjectService: SubjectService
+    private subjectService: SubjectService,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
     if(environment.token == '') {
       /* alert('Session expired!'); */
       this.router.navigate(['/login']);
+    }
+
+    if(environment.type != 'Admin') {
+      this.alerts.showAlertDanger('You need to be an admin user to access this route!');
+      this.router.navigate(['/home']);
     }
 
     this.findAllSubject();
