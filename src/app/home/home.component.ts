@@ -25,6 +25,9 @@ export class HomeComponent implements OnInit {
   userId = environment.id;
   postList: Post[];
 
+  key = 'date';
+  reverse = true;
+
   constructor(
     private router: Router,
     private postService: PostService,
