@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
   user: User = new User();
   userId = environment.id;
   postList: Post[];
+  postTitle: string;
+  subjectName: string;
 
   key = 'date';
   reverse = true;
@@ -66,6 +68,27 @@ export class HomeComponent implements OnInit {
     this.auth.getByIdUser(this.userId).subscribe((resp: User) => {
       this.user = resp;
     })
+  }
+
+  findByTitlePost() {
+
+    if(this.postTitle == '') {
+      this.seeAllPosts();
+    } else {
+      this.postService.getByTitlePost(this.postTitle).subscribe((resp: Post[]) => {
+        this.postList = resp;
+      })
+    }
+  }
+
+  findByNameSubject() {
+    if(this.subjectName == '') {
+      this.seeAllSubjects();
+    } else {
+      this.subjectService.getByNameSubject(this.subjectName).subscribe((resp: Subject[]) => {
+        this.subjectList = resp;
+      })
+    }
   }
 
   publishPost() {

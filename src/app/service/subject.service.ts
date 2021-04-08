@@ -23,6 +23,10 @@ export class SubjectService {
     return this.http.get<Subject>(`http://localhost:8080/subject/${id}`, this.token);
   }
 
+  getByNameSubject(name: string): Observable<Subject[]> {
+    return this.http.get<Subject[]>(`http://localhost:8080/subject/name/${name}`, this.token);
+  }
+
   postSubject(subject: Subject): Observable<Subject> {
     return this.http.post<Subject>('http://localhost:8080/subject', subject, this.token);
   }
